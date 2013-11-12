@@ -1,0 +1,31 @@
+{
+  "name": "parsoid-latex",
+  "version": "0.0.1",
+  "description": "Generates PDFs from wikitext using Parsoid and pdflatex",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "cscott/pdf-research"
+  },
+  "keywords": [
+    "pdf",
+    "wikitext",
+    "latex"
+  ],
+  "author": "C. Scott Ananian",
+  "license": "GPLv2",
+  "dependencies": {
+	  "amdefine": "~0.1.0",
+	  "commander": "~2.0.0",
+      "gammalatex": "~0.0.4"
+  },
+  "devDependencies": {
+      "mocha": "~1.14.0"
+  },
+  "bin": {
+      "parsoid-latex": "./bin/parsoid-latex.js"
+  }
+}
