@@ -10,6 +10,8 @@ program
 			'Save PDF to the given <filename>', null)
 	.option('-p, --prefix <prefix>',
 			'Which wiki prefix to use to resolve the title', 'en')
+	.option('-s, --size <letter|a4>',
+			'Set paper size', 'letter')
 	.option('-a, --api <url>',
 			'Parsoid API root', 'http://parsoid.wmflabs.org');
 
@@ -57,7 +59,11 @@ request(apiURL, function(error, response, body) {
 	log('Compiling to PDF with xelatex');
 	gammalatex.setCompileCommand({
 		command: "xelatex",
-		options: ["-interaction=nonstopmode", "-halt-on-error"]
+		options: [
+			"-interaction=nonstopmode",
+			"-halt-on-error",
+			'-papersize=' + program.size
+		]
 	});
 	gammalatex.parse(latexOutput, function(err, readStream) {
 		log('Saving PDF');
