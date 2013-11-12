@@ -20,7 +20,9 @@
   "dependencies": {
 	  "amdefine": "~0.1.0",
 	  "commander": "~2.0.0",
-      "gammalatex": "~0.0.4"
+	  "domino": "~1.0.13",
+      "gammalatex": "git+https://github.com/cscott/gammalatex#master",
+	  "request": "~2.27.0"
   },
   "devDependencies": {
       "mocha": "~1.14.0"

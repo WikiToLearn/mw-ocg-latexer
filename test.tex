@@ -1,0 +1,21 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{fontspec, graphicx}
+%\usepackage[dvipdfm, colorlinks, breaklinks, pdftitle={XeLaTeX test},pdfauthor={author}]{hyperref}
+\usepackage[usenames]{color}
+%\definecolor{Gray}{rgb}{.7,.7,.7}
+
+\setmainfont
+[ Path = ./fonts/ ,
+BoldFont = GenBasB.ttf ,
+ItalicFont = GenI102.ttf ,
+BoldItalicFont = GenBasBI.ttf ]
+{GenR102.ttf}
+
+\begin{document}
+
+This is a quick {\color{red} test}.
+
+\end{document}
