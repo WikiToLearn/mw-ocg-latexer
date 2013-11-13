@@ -18,16 +18,18 @@
   "author": "C. Scott Ananian",
   "license": "GPLv2",
   "dependencies": {
-	  "amdefine": "~0.1.0",
-	  "commander": "~2.0.0",
-	  "domino": "~1.0.13",
-      "gammalatex": "git+https://github.com/cscott/gammalatex#master",
-	  "request": "~2.27.0"
+    "amdefine": "~0.1.0",
+    "async": "~0.2.9",
+    "commander": "~2.0.0",
+    "domino": "~1.0.13",
+    "gammalatex": "git+https://github.com/cscott/gammalatex#master",
+    "request": "~2.27.0",
+    "tmp": "0.0.21"
   },
   "devDependencies": {
-      "mocha": "~1.14.0"
+    "mocha": "~1.14.0"
   },
   "bin": {
-      "parsoid-latex": "./bin/parsoid-latex.js"
+    "parsoid-latex": "./bin/parsoid-latex.js"
   }
 }
