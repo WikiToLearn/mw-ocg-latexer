@@ -34,6 +34,7 @@ if (program.args.length > 1) {
 
 var async = require('async');
 var domino = require('domino');
+var easyimage = require('easyimage');
 var fs = require('fs');
 var gammalatex = require('gammalatex');
 var path = require('path');
@@ -88,6 +89,18 @@ var fetchImages = function(document, callback) {
 						resURL.replace(/\/File:/, '/Special:Redirect/file/');
 					request({ url: realURL, encoding: null }).
 						on('end', function() {
+							// workaround for .gifs (convert format)
+							if (/[.]gif$/i.test(resURL)) {
+								return easyimage.convert({
+									src: name, dst: name+'.png'
+								}, function(err, image) {
+									if (err) {
+										console.error('Error converting GIF',
+													  resURL);
+									}
+									callback(null, err ? null : name + '.png');
+								});
+							}
 							// map URL to the temporary file name w/ contents
 							return callback(null, name);
 						}).
