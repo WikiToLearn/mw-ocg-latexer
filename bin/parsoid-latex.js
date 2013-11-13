@@ -12,6 +12,8 @@ program
 			'Which wiki prefix to use to resolve the title', 'en')
 	.option('-s, --size <letter|a4>',
 			'Set paper size', 'letter')
+	.option('-t, --toc',
+			'Print table of contents')
 	.option('-d, --debug',
 			'Output LaTeX source instead of PDF')
 	.option('-a, --api <url>',
@@ -71,7 +73,7 @@ fetchParsoid(title, function(body) {
 	var dom = domino.createDocument(body);
 	// ok, generate LaTeX!
 	log('Converting to LaTeX');
-	var latexOutput = parsoidlatex.convert(dom);
+	var latexOutput = parsoidlatex.convert(dom, { toc: !!program.toc });
 	// compile to PDF!
 	if (program.debug) {
 		if (program.output) {
@@ -91,6 +93,7 @@ fetchParsoid(title, function(body) {
 		]
 	});
 	gammalatex.addRerunIndicator("No file output.toc.");
+	gammalatex.addRerunIndicator("Package hyperref Warning: Rerun");
 	gammalatex.parse(latexOutput, function(err, readStream) {
 		log('Saving PDF');
 		if (err) throw err;
