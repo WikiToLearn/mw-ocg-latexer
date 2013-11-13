@@ -67,7 +67,11 @@ var fetchImages = function(document, callback) {
 	}, function(err, tmpdir) {
 		if (err) throw err;
 		var base = getBaseHref(document);
-		var imgs = document.querySelectorAll('figure img[resource]');
+		var imgs = document.querySelectorAll([
+			'figure img[resource]',
+			'*[typeof="mw:Image"] img[resource]',
+			'*[typeof="mw:Image/Thumb"] img[resource]'
+		].join(','));
 		var tasks = Object.create(null);
 		Array.prototype.forEach.call(imgs, function(img) {
 			var resURL = url.resolve(base, img.getAttribute('resource'));
