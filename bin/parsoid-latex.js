@@ -83,9 +83,13 @@ var fetchImages = function(document, callback) {
 				}
 				log('Fetching image', resURL);
 				var m = /([^\/:]+)([.]\w+)$/.exec(resURL);
+				var clean = function(s) {
+					// make filenames TeX-safe
+					return s.replace(/[^A-Za-z0-9.]+/g, '-');
+				};
 				tmp.tmpName({
-					prefix: m ? m[1] : undefined,
-					postfix: m ? m[2] : undefined,
+					prefix: m ? clean(m[1]) : undefined,
+					postfix: m ? clean(m[2]) : undefined,
 					dir: tmpdir
 				}, function(err, name) {
 					if (err) throw err;
