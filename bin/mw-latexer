@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var latexer = require('../');
+
+program
+	.version(latexer.version)
+	.usage('[options] <bundle.zip>')
+	.option('-o, --output <filename>',
+			'Save PDF to the given <filename>', null)
+	.option('-s, --size <letter|a4>',
+			'Set paper size', 'letter')
+	.option('-t, --toc',
+			'Print table of contents')
+	.option('-d, --debug',
+			'Output LaTeX source instead of PDF');
+
+program.parse(process.argv);
+
+if (program.args.length === 0) {
+	console.error('A bundle filename is required.');
+	return 1;
+}
+if (program.args.length > 1) {
+	console.error('Too many arguments.');
+	return 1;
+}
+
+var bundlefile = program.args[0];
+
+var log = function() {
+	// en/disable log messages here
+	if (program.debug) {
+		console.error.apply(console, arguments);
+	}
+};
+
+var options = {
+	bundle: bundlefile,
+	toc: !!program.toc,
+	size: program.size,
+	debug: !!program.debug,
+	output: program.output,
+	log: log
+};
+
+latexer.convert(options).then(function(status) {
+	process.exit(status);
+}).done();
