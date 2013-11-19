@@ -12,7 +12,6 @@ others.
 
 Install the node package dependencies.
 ```
-cd latex
 npm install
 ```
 
@@ -21,22 +20,30 @@ Install other system dependencies.
 apt-get install texlive-xetex imagemagick
 ```
 
+## Generating bundles
+
+You may wish to install the `mw-bundler` package to create bundles
+from wikipedia articles.  The below text assumes that you have done
+so; ignore the `mw-bundler` references if you have bundles from
+some other source.
+
 ## Running
 
 To generate a PDF named `out.pdf` from the `en` wikipedia article
 "United States":
 ```
-bin/mw-bundler -o out.pdf --prefix en "United States"
+mw-bundler -o us.zip --prefix en "United States"
+bin/mw-latexer -o out.pdf us.zip
 ```
 
 For debugging, preserving the XeTeX output is often useful:
 ```
-bin/mw-bundler -o out.tex --prefix en "United States" && xelatex out.tex
+bin/mw-latexer -o out.tex us.zip && xelatex out.tex
 ```
 
 For other options, see:
 ```
-bin/mw-bundler --help
+bin/mw-latexer --help
 ```
 
 ## License
