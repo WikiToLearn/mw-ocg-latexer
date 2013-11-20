@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.8"
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq texlive-xetex texlive-latex-recommended texlive-fonts-recommended imagemagick unzip
+ - mkdir ~/texmf
+ - unzip -d ~/texmf texdeps/fontspec.tds.zip
+ - cp -r ~/texmf/tex/latex ~/texmf/tex/xelatex
+ - unzip -d ~/texmf texdeps/l3kernel.tds.zip
+ - unzip -d ~/texmf texdeps/l3packages.tds.zip
+ - unzip -d ~/texmf texdeps/hyperref.tds.zip
