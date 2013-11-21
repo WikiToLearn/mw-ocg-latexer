@@ -1,6 +1,9 @@
-var assert = require("assert");
-var latexer = require('../');
+/* global describe, it */
+var assert = require('assert');
+var fs = require('fs');
 var path = require('path');
+
+var latexer = require('../');
 
 // ensure that we don't crash on any of our sample inputs
 describe("Basic crash test", function() {
