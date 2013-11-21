@@ -12,6 +12,8 @@ program
 			'Set paper size', 'letter')
 	.option('-t, --toc',
 			'Print table of contents')
+	.option('-v, --verbose',
+			'Print verbose progress information')
 	.option('-d, --debug',
 			'Output LaTeX source instead of PDF');
 
@@ -30,7 +32,7 @@ var bundlefile = program.args[0];
 
 var log = function() {
 	// en/disable log messages here
-	if (program.debug) {
+	if (program.verbose || program.debug) {
 		console.error.apply(console, arguments);
 	}
 };
