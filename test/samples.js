@@ -26,21 +26,21 @@ describe("Basic crash test", function() {
 	var hasXeLaTeX = checkXeLaTeX();
 	['tao.zip', 'hurricanes.zip', 'us.zip'].forEach(function(bundle) {
 		describe(bundle, function() {
-			var dest = hasXeLaTeX ? 'PDF' : 'tex';
+			var dest = hasXeLaTeX ? 'pdf' : 'tex';
 			it('should compile to '+dest, function(done) {
 				this.timeout(0);
 				var filename = path.join(__dirname, '..', 'samples', bundle);
 				return latexer.convert({
 					bundle: filename,
-					output: filename + '.pdf',
+					output: filename + '.' + dest,
 					size: 'letter',
-					debug: !hasXeLaTeX,
+					latex: !hasXeLaTeX,
 					log: function() { /* suppress logging */ }
 				}).then(function(statusCode) {
 					assert.equal(statusCode, 0);
 				}).ensure(function() {
 					try {
-						fs.unlinkSync(filename + '.pdf');
+						fs.unlinkSync(filename + '.' + dest);
 					} catch (e) { }
 				}).done(
 					function() { done(); },

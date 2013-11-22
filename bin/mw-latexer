@@ -16,8 +16,10 @@ program
 			'Render page in single column layout')
 	.option('-v, --verbose',
 			'Print verbose progress information')
-	.option('-d, --debug',
-			'Output LaTeX source instead of PDF');
+	.option('-l, --latex',
+			'Output LaTeX source instead of PDF')
+	.option('-D, --debug',
+			'Turn on debugging features (eg, full stack traces on exceptions)');
 
 program.parse(process.argv);
 
@@ -43,6 +45,7 @@ var options = {
 	bundle: bundlefile,
 	toc: !!program.toc,
 	size: program.size,
+	latex: !!program.latex,
 	debug: !!program.debug,
 	output: program.output,
 	onecolumn: program.oneColumn,
