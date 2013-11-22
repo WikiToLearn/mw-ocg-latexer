@@ -2,6 +2,7 @@
 
 var program = require('commander');
 var latexer = require('../');
+var status = require('../lib/status');
 
 program
 	.version(latexer.version)
@@ -48,6 +49,9 @@ var options = {
 	onecolumn: program.oneColumn,
 	log: log
 };
+
+// TODO: Update this number if we add more stages to the renderer
+status.setNumStages(4);
 
 latexer.convert(options).then(function(status) {
 	process.exit(status);
