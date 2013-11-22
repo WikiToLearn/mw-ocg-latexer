@@ -2,7 +2,6 @@
 
 var program = require('commander');
 var latexer = require('../');
-var status = require('../lib/status');
 
 program
 	.version(latexer.version)
@@ -11,8 +10,8 @@ program
 			'Save PDF to the given <filename>', null)
 	.option('-s, --size <letter|a4>',
 			'Set paper size', 'letter')
-	.option('-t, --toc',
-			'Print table of contents')
+	.option('-t, --toc <yes|no|auto>',
+			'Force presence/absence of table of contents [auto]', 'auto')
 	.option('-1, --one-column',
 			'Render page in single column layout')
 	.option('-v, --verbose',
@@ -44,7 +43,6 @@ var log = function() {
 
 var options = {
 	bundle: bundlefile,
-	toc: !!program.toc,
 	size: program.size,
 	latex: !!program.latex,
 	debug: !!program.debug,
@@ -53,8 +51,9 @@ var options = {
 	log: log
 };
 
-// TODO: Update this number if we add more stages to the renderer
-status.setNumStages(4);
+if (program.toc !== 'auto') {
+	options.toc = !/^(no|false|off)$/i.test(program.toc);
+}
 
 latexer.convert(options).then(function(status) {
 	process.exit(status);
