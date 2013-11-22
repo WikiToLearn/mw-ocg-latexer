@@ -18,7 +18,7 @@ npm install
 
 Install other system dependencies.
 ```
-apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended imagemagick inkscape unzip
+apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended latex-xcolor imagemagick inkscape unzip
 ```
 
 Note that up-to-date LaTeX `hyperref` and `fontspec` packages are
