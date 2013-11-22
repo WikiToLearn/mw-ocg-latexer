@@ -12,6 +12,8 @@ program
 			'Set paper size', 'letter')
 	.option('-t, --toc',
 			'Print table of contents')
+	.option('-1, --one-column',
+			'Render page in single column layout')
 	.option('-v, --verbose',
 			'Print verbose progress information')
 	.option('-d, --debug',
@@ -43,6 +45,7 @@ var options = {
 	size: program.size,
 	debug: !!program.debug,
 	output: program.output,
+	onecolumn: program.oneColumn,
 	log: log
 };
 
