@@ -18,12 +18,15 @@ npm install
 
 Install other system dependencies.
 ```
-apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended latex-xcolor imagemagick inkscape unzip
+apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended latex-xcolor imagemagick rsvg-convert unzip
 ```
 
 Note that up-to-date LaTeX `hyperref` and `fontspec` packages are
 required.  If your LaTeX installation is old, you can find recent
 versions in `texdeps/`.
+
+If you prefer, the `inkscape` package can be installed to do SVG->PDF
+conversion in place of `rsvg-convert`.
 
 ## Generating bundles
 
