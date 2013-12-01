@@ -4,7 +4,7 @@ node_js:
   - "0.8"
 before_install:
  - sudo apt-get update -qq
- - sudo apt-get install -qq texlive-xetex texlive-latex-recommended texlive-fonts-recommended latex-xcolor imagemagick librsvg2-bin unzip
+ - sudo apt-get install -qq texlive-xetex texlive-latex-recommended texlive-fonts-recommended texlive-lang-all latex-xcolor imagemagick librsvg2-bin unzip
  - mkdir ~/texmf
  - unzip -d ~/texmf texdeps/fontspec.tds.zip
  - cp -r ~/texmf/tex/latex ~/texmf/tex/xelatex

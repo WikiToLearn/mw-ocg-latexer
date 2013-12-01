@@ -12,6 +12,8 @@ program
 			'Set paper size', 'letter')
 	.option('-t, --toc <yes|no|auto>',
 			'Force presence/absence of table of contents [auto]', 'auto')
+	.option('-L, --lang <2-char lang code>',
+			'Force collection to use the given default language', null)
 	.option('-1, --one-column',
 			'Render page in single column layout')
 	.option('-v, --verbose',
@@ -47,6 +49,7 @@ var options = {
 	latex: !!program.latex,
 	debug: !!program.debug,
 	output: program.output,
+	lang: program.lang,
 	onecolumn: program.oneColumn,
 	log: log
 };
