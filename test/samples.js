@@ -24,7 +24,7 @@ var checkXeLaTeX = function() {
 // ensure that we don't crash on any of our sample inputs
 describe("Basic crash test", function() {
 	var hasXeLaTeX = checkXeLaTeX();
-	['tao.zip', 'hurricanes.zip', 'us.zip'].forEach(function(bundle) {
+	['tao.zip', 'hurricanes.zip', 'papier.zip', 'us.zip'].forEach(function(bundle) {
 		describe(bundle, function() {
 			var dest = hasXeLaTeX ? 'pdf' : 'tex';
 			it('should compile to '+dest, function(done) {

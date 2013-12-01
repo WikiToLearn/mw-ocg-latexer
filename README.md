@@ -18,7 +18,7 @@ npm install
 
 Install other system dependencies.
 ```
-apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended latex-xcolor imagemagick librsvg2-bin unzip
+apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended latex-xcolor imagemagick librsvg2-bin unzip libimage-exiftool-perl
 ```
 
 Note that up-to-date LaTeX `hyperref` and `fontspec` packages are
