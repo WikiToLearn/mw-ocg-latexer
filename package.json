@@ -17,19 +17,19 @@
   ],
   "license": "GPLv2",
   "dependencies": {
-    "commander": "~2.0.0",
+    "commander": "~2.1.0",
     "domino": "~1.0.13",
     "easyimage": "~0.1.3",
     "es6-shim": "~0.9.1",
-    "gammalatex": "git+https://github.com/gammasoft/latex#66a075a82e3b1473404f652ea956a8e4841f3c66",
+    "gammalatex": "gammasoft/latex#0a16ea053e456062129f30e2a021485383001caa",
     "readable-stream": "~1.1.9",
     "request": "~2.27.0",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.21",
-    "when": "~2.6.0"
+    "when": "~2.7.0"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "~1.15.1"
   },
   "bin": {
     "mw-latexer": "./bin/mw-latexer"
