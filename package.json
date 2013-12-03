@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gerrit.wikimedia.org/r/p/mediawiki/extensions/Collection/OfflineContentGenerator/latex_renderer.git"
+    "url": "wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer"
   },
   "keywords": [
     "pdf",

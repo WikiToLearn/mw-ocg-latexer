@@ -62,9 +62,9 @@ GPLv2
 
 (c) 2013 by C. Scott Ananian
 
-[1]: https://travis-ci.org/cscott/mw-latexer.png
-[2]: https://travis-ci.org/cscott/mw-latexer
-[3]: https://david-dm.org/cscott/mw-latexer.png
-[4]: https://david-dm.org/cscott/mw-latexer
-[5]: https://david-dm.org/cscott/mw-latexer/dev-status.png
-[6]: https://david-dm.org/cscott/mw-latexer#info=devDependencies
+[1]: https://travis-ci.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer.png
+[2]: https://travis-ci.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer
+[3]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer.png
+[4]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer
+[5]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer/dev-status.png
+[6]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer#info=devDependencies
