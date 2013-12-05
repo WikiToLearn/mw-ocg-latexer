@@ -21,7 +21,8 @@ Install other system dependencies.
 ```
 apt-get install texlive-xetex texlive-latex-recommended \
 		texlive-fonts-recommended texlive-lang-all latex-xcolor \
-		imagemagick librsvg2-bin unzip
+		imagemagick librsvg2-bin unzip texlive-latex-extra \
+		texlive-fonts-recommended
 ```
 
 Note that up-to-date LaTeX `hyperref` and `fontspec` packages are
