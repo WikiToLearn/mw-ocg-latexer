@@ -20,7 +20,8 @@ npm install
 Install other system dependencies.
 ```
 apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra \
-                texlive-fonts-recommended texlive-fonts-extra fonts-nafees \
+                texlive-fonts-recommended texlive-fonts-extra \
+                fonts-hosny-amiri fonts-nakula fonts-nafees \
                 texlive-lang-all latex-xcolor imagemagick librsvg2-bin unzip
 ```
 
