@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require('when/monitor/console'); // early debugging of promise errors
 
 var program = require('commander');
 var latexer = require('../');
@@ -60,4 +61,11 @@ if (program.toc !== 'auto') {
 
 latexer.convert(options).then(function(status) {
 	process.exit(status);
+}, function(err) {
+    if (program.debug && err.stack) {
+        console.error(err.stack);
+    } else {
+        console.error(err);
+    }
+    process.exit(1);
 }).done();
