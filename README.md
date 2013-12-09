@@ -25,10 +25,14 @@ apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra \
 
 Note that up-to-date LaTeX `hyperref` and `fontspec` packages are
 required.  If your LaTeX installation is old, you can find recent
-versions in `texdeps/`.
+versions of some of the necessary packages in `texdeps/`, but it's
+best to use an up-to-date TeXlive distribution.
 
 If you prefer, the `inkscape` package can be installed to do SVG->PDF
 conversion in place of `rsvg-convert` (from the `librsvg2-bin` package).
+
+In older versions of Ubuntu, the Nakula font was provided by the
+`ttf-devanagari-fonts` package, instead of `fonts-nakula`.
 
 ## Generating bundles
 
