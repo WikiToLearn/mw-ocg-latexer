@@ -23,7 +23,6 @@
     "es6-shim": "~0.9.1",
     "gammalatex": "~0.0.6",
     "readable-stream": "~1.1.9",
-    "request": "~2.27.0",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.21",
     "when": "~2.7.0"
