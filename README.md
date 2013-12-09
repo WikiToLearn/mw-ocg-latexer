@@ -33,6 +33,8 @@ conversion in place of `rsvg-convert` (from the `librsvg2-bin` package).
 
 In older versions of Ubuntu, the Nakula font was provided by the
 `ttf-devanagari-fonts` package, instead of `fonts-nakula`.
+In some cases you'll need to manually install the
+`texlive-generic-extra` package as well.
 
 ## Generating bundles
 
