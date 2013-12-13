@@ -25,7 +25,8 @@
     "readable-stream": "~1.1.9",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.21",
-    "when": "~2.7.0"
+    "when": "~2.7.0",
+    "icu-bidi": "~0.1.1"
   },
   "devDependencies": {
     "mocha": "~1.15.1"
