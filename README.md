@@ -36,6 +36,9 @@ In older versions of Ubuntu, the Nakula font was provided by the
 In some cases you'll need to manually install the
 `texlive-generic-extra` package as well.
 
+In older versions of Ubuntu, the Rachana font was provided by the
+`ttf-malayalam-fonts` package, instead of `fonts-smc`.
+
 ## Generating bundles
 
 You may wish to install the [mw-ocg-bundler] npm package to create bundles
