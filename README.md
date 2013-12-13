@@ -84,8 +84,8 @@ GPLv2
 [NPM1]: https://nodei.co/npm/mw-ocg-latexer.png
 [NPM2]: https://nodei.co/npm/mw-ocg-latexer/
 
-[1]: https://travis-ci.org/cscott/mw-latexer.png
-[2]: https://travis-ci.org/cscott/mw-latexer
+[1]: https://travis-ci.org/cscott/mw-ocg-latexer.png
+[2]: https://travis-ci.org/cscott/mw-ocg-latexer
 [3]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer.png
 [4]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer
 [5]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer/dev-status.png
