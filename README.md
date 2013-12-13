@@ -62,6 +62,16 @@ For other options, see:
 bin/mw-ocg-latexer --help
 ```
 
+## Related Projects
+
+* [MediaWiki to LaTeX](http://sourceforge.net/projects/wb2pdf/)
+  ([wiki](https://de.wikibooks.org/wiki/Benutzer:Dirk_Huenniger/wb2pdf))
+* [icu-bidi](https://github.com/cscott/node-icu-bidi)
+  Used by `mw-ocg-latexer` to implement the
+  [Unicode Bidirectional Algorithm](http://www.unicode.org/unicode/reports/tr9/)
+* [BiDiTeX](http://biditex.sourceforge.net/)
+  Another alternative for BiDi support, although written for eTeX.
+
 ## License
 
 GPLv2
