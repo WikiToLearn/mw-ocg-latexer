@@ -14,6 +14,8 @@ Install the node package dependencies.
 ```
 npm install
 ```
+You will need to have a C compiler installed in order to build the
+`sqlite3` and `icu-bidi` packages (ie, `apt-get install g++`).
 
 Install other system dependencies.
 ```
