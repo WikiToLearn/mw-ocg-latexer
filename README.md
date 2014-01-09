@@ -39,7 +39,10 @@ In some cases you'll need to manually install the
 `texlive-generic-extra` package as well.
 
 In older versions of Ubuntu, the Rachana font was provided by the
-`ttf-malayalam-fonts` package, instead of `fonts-smc`.
+`ttf-indic-fonts-core` or `ttf-malayalam-fonts` package, instead of
+`fonts-smc`.
+
+In Ubuntu 12.04, the `lmodern` package must also be installed manually.
 
 ## Generating bundles
 
