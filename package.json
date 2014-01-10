@@ -22,11 +22,11 @@
     "easyimage": "~0.1.3",
     "es6-shim": "~0.9.1",
     "gammalatex": "~0.0.6",
+    "icu-bidi": "~0.1.2",
     "readable-stream": "~1.1.9",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.21",
-    "when": "~2.7.0",
-    "icu-bidi": "~0.1.1"
+    "when": "~2.7.0"
   },
   "devDependencies": {
     "mocha": "~1.17.0"
