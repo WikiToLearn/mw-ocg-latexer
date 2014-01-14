@@ -1,0 +1,11 @@
+\ProvidesFile{gloss-chinese.ldf}[polyglossia: module for chinese]
+\RequirePackage{xeCJK}
+
+\PolyglossiaSetup{chinese}{%
+  script=Chinese,
+  scripttag=CJK,
+  langtag=Chinese Simplified, % xxx or 'Chinese Traditional' or
+                              % 'Chinese Hong Kong' or 'Chinese Phonetic'
+  hyphennames={nohyphenation},
+  fontsetup=true
+}
