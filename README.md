@@ -19,7 +19,8 @@ You will need to have a C compiler installed in order to build the
 
 Install other system dependencies.
 ```
-apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra \
+apt-get install texlive-xetex texlive-latex-recommended \
+                texlive-latex-extra texlive-generic-extra \
                 texlive-fonts-recommended texlive-fonts-extra \
                 fonts-hosny-amiri fonts-nakula fonts-nafees fonts-smc \
                 fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk\
