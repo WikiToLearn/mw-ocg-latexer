@@ -63,7 +63,8 @@ bin/mw-ocg-latexer -o out.pdf us.zip
 
 For debugging, preserving the XeTeX output is often useful:
 ```
-bin/mw-ocg-latexer -o out.tex us.zip && xelatex out.tex
+bin/mw-ocg-latexer -o out.tex us.zip
+TEXINPUTS=tex/: xelatex out.tex
 ```
 
 For other options, see:
