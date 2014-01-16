@@ -3,6 +3,8 @@ require('when/monitor/console'); // early debugging of promise errors
 
 var program = require('commander');
 var latexer = require('../');
+var Syslog = require('node-syslog');
+var util = require('util');
 
 program
 	.version(latexer.version)
@@ -37,10 +39,16 @@ if (program.args.length > 1) {
 
 var bundlefile = program.args[0];
 
+Syslog.init("mw-ocg-latexer", Syslog.LOG_PID | Syslog.LOG_ODELAY, Syslog.LOG_LOCAL0);
 var log = function() {
 	// en/disable log messages here
 	if (program.verbose || program.debug) {
 		console.error.apply(console, arguments);
+	}
+	try {
+		Syslog.log(Syslog.LOG_INFO, util.format.apply(this, arguments));
+	} catch (err) {
+		Syslog.log(Syslog.LOG_ERR, "Could not format message with arguments " + arguments)
 	}
 };
 
@@ -60,6 +68,7 @@ if (program.toc !== 'auto') {
 }
 
 latexer.convert(options).then(function(status) {
+	Syslog.close();
 	process.exit(status);
 }, function(err) {
     if (program.debug && err.stack) {
@@ -67,5 +76,6 @@ latexer.convert(options).then(function(status) {
     } else {
         console.error(err);
     }
+	Syslog.close();
     process.exit(1);
 }).done();

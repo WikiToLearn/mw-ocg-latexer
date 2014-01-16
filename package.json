@@ -26,7 +26,8 @@
     "readable-stream": "~1.1.9",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.21",
-    "when": "~2.7.0"
+    "when": "~2.7.0",
+    "node-syslog": "~1.1.7"
   },
   "devDependencies": {
     "mocha": "~1.17.0"
