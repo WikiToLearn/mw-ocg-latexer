@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 require('when/monitor/console'); // early debugging of promise errors
 
+if (/v0\.[0-7]\./.test(process.version)) {
+	console.error('Node version', process.version, 'is not supported.');
+	process.exit(1);
+}
+
 var program = require('commander');
 var latexer = require('../');
 var util = require('util');

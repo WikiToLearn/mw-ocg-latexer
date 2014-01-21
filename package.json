@@ -16,6 +16,9 @@
     "latex"
   ],
   "license": "GPLv2",
+  "engines": {
+    "node": ">=0.8"
+  },
   "dependencies": {
     "commander": "~2.1.0",
     "domino": "fgnass/domino#0eab785c6938067ebc6ec69469ecd1a24b413bdd",
