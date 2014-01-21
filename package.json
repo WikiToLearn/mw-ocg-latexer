@@ -23,11 +23,11 @@
     "es6-shim": "~0.9.1",
     "gammalatex": "cscott/gammalatex#error-handling",
     "icu-bidi": "~0.1.2",
+    "node-syslog": "~1.1.7",
     "readable-stream": "~1.1.9",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.21",
-    "when": "~2.7.0",
-    "node-syslog": "~1.1.7"
+    "when": "~2.7.0"
   },
   "devDependencies": {
     "mocha": "~1.17.0"

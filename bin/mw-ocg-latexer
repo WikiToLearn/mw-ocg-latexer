@@ -3,7 +3,6 @@ require('when/monitor/console'); // early debugging of promise errors
 
 var program = require('commander');
 var latexer = require('../');
-var Syslog = require('node-syslog');
 var util = require('util');
 
 program
@@ -24,7 +23,9 @@ program
 	.option('-l, --latex',
 			'Output LaTeX source instead of PDF')
 	.option('-D, --debug',
-			'Turn on debugging features (eg, full stack traces on exceptions)');
+			'Turn on debugging features (eg, full stack traces on exceptions)')
+	.option('--syslog',
+			'Log errors using syslog (for production deployments)');
 
 program.parse(process.argv);
 
@@ -39,7 +40,13 @@ if (program.args.length > 1) {
 
 var bundlefile = program.args[0];
 
-Syslog.init("mw-ocg-latexer", Syslog.LOG_PID | Syslog.LOG_ODELAY, Syslog.LOG_LOCAL0);
+var Syslog = program.syslog ? require('node-syslog') : {
+	init: function() { },
+	log: function() { },
+	close: function() { }
+};
+Syslog.init(latexer.name, Syslog.LOG_PID|Syslog.LOG_ODELAY, Syslog.LOG_LOCAL0);
+
 var log = function() {
 	// en/disable log messages here
 	if (program.verbose || program.debug) {
@@ -48,7 +55,9 @@ var log = function() {
 	try {
 		Syslog.log(Syslog.LOG_INFO, util.format.apply(this, arguments));
 	} catch (err) {
-		Syslog.log(Syslog.LOG_ERR, "Could not format message with arguments " + arguments)
+		// This should never happen!  But don't try to convert arguments
+		// toString() if it does, since that might fail too.
+		Syslog.log(Syslog.LOG_ERR, "Could not format message! "+err);
 	}
 };
 
@@ -71,11 +80,13 @@ latexer.convert(options).then(function(status) {
 	Syslog.close();
 	process.exit(status);
 }, function(err) {
-    if (program.debug && err.stack) {
-        console.error(err.stack);
-    } else {
-        console.error(err);
-    }
+	if (program.debug && err.stack) {
+		console.error(err.stack);
+		Syslog.log(Syslog.LOG_ERR, err.stack);
+	} else {
+		console.error(err);
+		Syslog.log(Syslog.LOG_ERR, err);
+	}
 	Syslog.close();
-    process.exit(1);
+	process.exit(1);
 }).done();
