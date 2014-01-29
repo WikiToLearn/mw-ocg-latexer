@@ -22,8 +22,8 @@ Install other system dependencies.
 apt-get install texlive-xetex texlive-latex-recommended \
                 texlive-latex-extra texlive-generic-extra \
                 texlive-fonts-recommended texlive-fonts-extra \
-                fonts-hosny-amiri fonts-nakula fonts-nafees fonts-smc \
-                fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk\
+                fonts-hosny-amiri ttf-farsiweb fonts-nakula fonts-nafees fonts-smc \
+                fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk \
                 texlive-lang-all latex-xcolor imagemagick librsvg2-bin unzip
 ```
 
