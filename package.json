@@ -30,10 +30,10 @@
     "readable-stream": "~1.1.9",
     "sqlite3": "~2.1.19",
     "tmp": "~0.0.23",
-    "when": "~2.7.0"
+    "when": "~3.1.0"
   },
   "devDependencies": {
-    "mocha": "~1.17.0"
+    "mocha": "1.*"
   },
   "bin": {
     "mw-ocg-latexer": "./bin/mw-ocg-latexer"
