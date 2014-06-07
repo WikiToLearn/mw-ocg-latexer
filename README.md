@@ -22,7 +22,8 @@ Install other system dependencies.
 apt-get install texlive-xetex texlive-latex-recommended \
                 texlive-latex-extra texlive-generic-extra \
                 texlive-fonts-recommended texlive-fonts-extra \
-                fonts-hosny-amiri ttf-farsiweb fonts-nakula fonts-nafees fonts-smc \
+                fonts-hosny-amiri fonts-farsiweb fonts-nakula \
+                fonts-nafees fonts-smc \
                 fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk \
                 texlive-lang-all latex-xcolor imagemagick librsvg2-bin unzip
 ```
@@ -43,6 +44,9 @@ In some cases you'll need to manually install the
 In older versions of Ubuntu, the Rachana font was provided by the
 `ttf-indic-fonts-core` or `ttf-malayalam-fonts` package, instead of
 `fonts-smc`.
+
+In older versions of Ubuntu, the Nazli font was provided by the
+`ttf-farsiweb` package instead of `fonts-farsiweb`.
 
 In Ubuntu 12.04, the `lmodern` package must also be installed manually.
 
