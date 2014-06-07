@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-require('when/monitor/console'); // early debugging of promise errors
 
 if (/v0\.[0-7]\./.test(process.version)) {
 	console.error('Node version', process.version, 'is not supported.');
@@ -9,6 +8,8 @@ if (/v0\.[0-7]\./.test(process.version)) {
 var program = require('commander');
 var latexer = require('../');
 var util = require('util');
+
+var Promise = require('bluebird');
 
 program
 	.version(latexer.version)
@@ -44,6 +45,8 @@ if (program.args.length > 1) {
 }
 
 var bundlefile = program.args[0];
+
+if (program.debug) { Promise.longStackTraces(); /* as soon as possible */ }
 
 var Syslog = program.syslog ? require('node-syslog') : {
 	init: function() { },
