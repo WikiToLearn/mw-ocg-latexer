@@ -1,4 +1,6 @@
 /* global describe, it */
+"use strict";
+
 var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
@@ -12,7 +14,7 @@ var checkXeLaTeX = function() {
 		/* jshint bitwise: false */
 		try {
 			var st = fs.statSync(path.join(p, 'xelatex'));
-			if (st.isFile() && (st.mode & 0111) !== 0) {
+			if (st.isFile() && (st.mode & parseInt('111', 8)) !== 0) {
 				/* it's an executable file */
 				has = true;
 			}

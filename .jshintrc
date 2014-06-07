@@ -4,7 +4,10 @@
 
 		"setImmediate",
 
-		"QUnit"
+		"QUnit",
+
+		"Map",
+		"Set"
 	],
 
 	"bitwise": true,
@@ -18,9 +21,8 @@
 	"nonew": true,
 	"regexp": false,
 	"undef": true,
-	"strict": false,
+	"strict": true,
 	"trailing": true,
-	"unused":true,
 
 	"smarttabs": true,
 	"multistr": true,
