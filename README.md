@@ -96,12 +96,12 @@ GPLv2
 [mw-ocg-bundler]: https://github.com/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-bundler
 [XeLaTeX]: https://en.wikipedia.org/wiki/XeTeX
 
-[NPM1]: https://nodei.co/npm/mw-ocg-latexer.png
+[NPM1]: https://nodei.co/npm/mw-ocg-latexer.svg
 [NPM2]: https://nodei.co/npm/mw-ocg-latexer/
 
-[1]: https://travis-ci.org/cscott/mw-ocg-latexer.png
+[1]: https://travis-ci.org/cscott/mw-ocg-latexer.svg
 [2]: https://travis-ci.org/cscott/mw-ocg-latexer
-[3]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer.png
+[3]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer.svg
 [4]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer
-[5]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer/dev-status.png
+[5]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer/dev-status.svg
 [6]: https://david-dm.org/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer#info=devDependencies
