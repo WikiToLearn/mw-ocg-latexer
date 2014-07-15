@@ -27,10 +27,10 @@
     "gammalatex": "~0.0.7",
     "icu-bidi": "~0.1.2",
     "node-syslog": "~1.1.7",
-    "prfun": "~0.1.0",
+    "prfun": "~1.0.0",
     "readable-stream": "~1.1.9",
     "sqlite3": "~2.2.3",
-    "tmp": "0.0.23"
+    "tmp": "~0.0.24"
   },
   "devDependencies": {
     "mocha": "~1.20.1"
