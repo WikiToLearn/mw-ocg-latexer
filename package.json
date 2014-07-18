@@ -28,7 +28,7 @@
     "icu-bidi": "~0.1.2",
     "node-syslog": "~1.1.7",
     "prfun": "~1.0.0",
-    "readable-stream": "~1.1.9",
+    "readable-stream": "~1.0.0",
     "sqlite3": "~2.2.3",
     "tmp": "~0.0.24"
   },
