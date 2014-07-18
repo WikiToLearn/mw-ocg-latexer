@@ -31,7 +31,7 @@ describe("Basic crash test", function() {
 	['tao.zip', 'hurricanes.zip', 'malayalam.zip', 'multiwiki.zip', 'papier.zip', 'us.zip', 'jabug.zip'].forEach(function(bundle) {
 		describe(bundle, function() {
 			var dest = hasXeLaTeX ? 'pdf' : 'tex';
-			it('should compile to '+dest, function(done) {
+			it('should compile to '+dest, function() {
 				this.timeout(0);
 				var filename = path.join(__dirname, '..', 'samples', bundle);
 				return latexer.convert({
@@ -46,10 +46,7 @@ describe("Basic crash test", function() {
 					try {
 						fs.unlinkSync(filename + '.' + dest);
 					} catch (e) { }
-				}).done(
-					function() { done(); },
-					function(err) { done(err); }
-				);
+				});
 			});
 		});
 	});
