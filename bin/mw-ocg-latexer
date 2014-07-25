@@ -13,7 +13,7 @@ var util = require('util');
 
 program
 	.version(latexer.version)
-	.usage('[options] <bundle.zip>')
+	.usage('[options] <bundle_dir or bundle.zip>')
 	.option('-o, --output <filename>',
 			'Save PDF to the given <filename>', null)
 	.option('-s, --size <letter|a4>',
@@ -36,7 +36,7 @@ program
 program.parse(process.argv);
 
 if (program.args.length === 0) {
-	console.error('A bundle filename is required.');
+	console.error('A bundle filename or directory is required.');
 	return 1;
 }
 if (program.args.length > 1) {
