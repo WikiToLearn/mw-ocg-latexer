@@ -30,6 +30,8 @@ program
 			'Output LaTeX source instead of PDF')
 	.option('-D, --debug',
 			'Turn on debugging features (eg, full stack traces on exceptions)')
+	.option('-T, --temporary-directory <dir>',
+			'Use <dir> for temporaries, not $TMPDIR or /tmp', null)
 	.option('--syslog',
 			'Log errors using syslog (for production deployments)');
 
@@ -73,6 +75,7 @@ var options = {
 	latex: !!program.latex,
 	debug: !!program.debug,
 	output: program.output,
+	tmpdir: program.temporaryDirectory,
 	lang: program.lang,
 	onecolumn: program.oneColumn,
 	log: log
