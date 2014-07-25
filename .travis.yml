@@ -5,4 +5,4 @@ node_js:
 before_install:
  - sudo add-apt-repository -y ppa:texlive-backports/ppa
  - sudo apt-get update -qq
- - sudo apt-get install -qq texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-generic-extra texlive-fonts-recommended texlive-fonts-extra fonts-hosny-amiri ttf-farsiweb ttf-devanagari-fonts fonts-nafees ttf-indic-fonts-core ttf-malayalam-fonts fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk texlive-lang-all latex-xcolor lmodern imagemagick librsvg2-bin libjpeg-progs unzip
+ - sudo apt-get install -qq texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-generic-extra texlive-fonts-recommended texlive-fonts-extra fonts-hosny-amiri ttf-farsiweb ttf-devanagari-fonts fonts-nafees ttf-indic-fonts-core ttf-malayalam-fonts fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk texlive-lang-all latex-xcolor lmodern poppler-utils imagemagick librsvg2-bin libjpeg-progs unzip

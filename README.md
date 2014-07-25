@@ -26,7 +26,7 @@ apt-get install texlive-xetex texlive-latex-recommended \
                 fonts-nafees fonts-smc \
                 fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk \
                 texlive-lang-all latex-xcolor \
-                imagemagick librsvg2-bin libjpeg-progs unzip
+                poppler-utils imagemagick librsvg2-bin libjpeg-progs unzip
 ```
 
 Note that up-to-date LaTeX `hyperref` and `fontspec` packages are
