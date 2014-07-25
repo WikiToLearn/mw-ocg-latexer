@@ -30,7 +30,7 @@
     "prfun": "~1.0.0",
     "readable-stream": "~1.0.0",
     "sqlite3": "~2.2.3",
-    "texvcjs": "~0.2.0",
+    "texvcjs": "~0.3.0",
     "tmp": "~0.0.24"
   },
   "devDependencies": {
