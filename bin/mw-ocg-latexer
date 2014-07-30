@@ -89,9 +89,9 @@ latexer.convert(options).then(function(status) {
 	Syslog.close();
 	process.exit(status);
 }, function(err) {
-	if (program.debug && err.stack) {
+	if ((program.debug || program.syslog) && err.stack) {
 		console.error(err.stack);
-		Syslog.log(Syslog.LOG_ERR, err.stack);
+		Syslog.log(Syslog.LOG_ERR, JSON.stringify(err.stack));
 	} else {
 		console.error(err);
 		Syslog.log(Syslog.LOG_ERR, err);
