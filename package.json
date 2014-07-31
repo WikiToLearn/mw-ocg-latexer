@@ -24,7 +24,7 @@
     "domino": "~1.0.17",
     "easyimage": "~0.1.3",
     "es6-shim": "~0.13.0",
-    "gammalatex": "~0.0.7",
+    "gammalatex": "cscott/gammalatex#race-be-gone",
     "icu-bidi": "~0.1.2",
     "node-syslog": "~1.1.7",
     "prfun": "~1.0.0",
