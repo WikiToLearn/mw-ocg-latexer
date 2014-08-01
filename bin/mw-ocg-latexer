@@ -31,9 +31,7 @@ program
 	.option('-D, --debug',
 			'Turn on debugging features (eg, full stack traces on exceptions)')
 	.option('-T, --temporary-directory <dir>',
-			'Use <dir> for temporaries, not $TMPDIR or /tmp', null)
-	.option('--syslog',
-			'Log errors using syslog (for production deployments)');
+			'Use <dir> for temporaries, not $TMPDIR or /tmp', null);
 
 program.parse(process.argv);
 
@@ -48,24 +46,31 @@ if (program.args.length > 1) {
 
 var bundlefile = program.args[0];
 
-var Syslog = program.syslog ? require('node-syslog') : {
-	init: function() { },
-	log: function() { },
-	close: function() { }
-};
-Syslog.init(latexer.name, Syslog.LOG_PID|Syslog.LOG_ODELAY, Syslog.LOG_LOCAL0);
-
 var log = function() {
-	// en/disable log messages here
-	if (program.verbose || program.debug) {
-		console.error.apply(console, arguments);
-	}
 	try {
-		Syslog.log(Syslog.LOG_INFO, util.format.apply(this, arguments));
+		// en/disable log messages here
+		if (program.verbose || program.debug) {
+			console.error.apply(console, arguments);
+		}
+		if (process.send) {
+			process.send({
+				type: 'log',
+				level: 'info',
+				message: util.format.apply(null, arguments)
+			});
+		}
 	} catch (err) {
 		// This should never happen!  But don't try to convert arguments
 		// toString() if it does, since that might fail too.
-		Syslog.log(Syslog.LOG_ERR, "Could not format message! "+err);
+		console.error("Could not format message!", err);
+		if (process.send) {
+			process.send({
+				type: 'log',
+				level: 'error',
+				message: 'Could not format message! ' + err,
+				stack: err.stack
+			});
+		}
 	}
 };
 
@@ -85,17 +90,21 @@ if (program.toc !== 'auto') {
 	options.toc = !/^(no|false|off)$/i.test(program.toc);
 }
 
-latexer.convert(options).then(function(status) {
-	Syslog.close();
-	process.exit(status);
-}, function(err) {
-	if ((program.debug || program.syslog) && err.stack) {
-		console.error(err.stack);
-		Syslog.log(Syslog.LOG_ERR, JSON.stringify(err.stack));
+latexer.convert(options).catch(function(err) {
+	var msg = {
+		type: 'log',
+		level: 'error'
+	};
+	if ( err instanceof Error ) {
+		msg.message = err.message;
+		msg.stack = err.stack;
 	} else {
-		console.error(err);
-		Syslog.log(Syslog.LOG_ERR, err);
+		msg.message = '' + err;
 	}
-	Syslog.close();
-	process.exit(1);
+	console.error( (program.debug && msg.stack) || msg.message );
+	// process.send is sync, so we won't exit before this is sent (yay)
+	if (process.send) {
+		process.send(msg);
+	}
+	process.exit(err.exitCode || 1);
 }).done();
