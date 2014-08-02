@@ -22,8 +22,7 @@ Install other system dependencies.
 apt-get install texlive-xetex texlive-latex-recommended \
                 texlive-latex-extra texlive-generic-extra \
                 texlive-fonts-recommended texlive-fonts-extra \
-                fonts-hosny-amiri fonts-farsiweb fonts-nakula \
-                fonts-nafees fonts-smc \
+                fonts-hosny-amiri fonts-farsiweb fonts-nafees \
                 fonts-arphic-uming fonts-arphic-ukai fonts-droid fonts-baekmuk \
                 texlive-lang-all latex-xcolor \
                 poppler-utils imagemagick librsvg2-bin libjpeg-progs unzip
@@ -36,15 +35,6 @@ best to use an up-to-date TeXlive distribution.
 
 If you prefer, the `inkscape` package can be installed to do SVG->PDF
 conversion in place of `rsvg-convert` (from the `librsvg2-bin` package).
-
-In older versions of Ubuntu, the Nakula font was provided by the
-`ttf-devanagari-fonts` package, instead of `fonts-nakula`.
-In some cases you'll need to manually install the
-`texlive-generic-extra` package as well.
-
-In older versions of Ubuntu, the Rachana font was provided by the
-`ttf-indic-fonts-core` or `ttf-malayalam-fonts` package, instead of
-`fonts-smc`.
 
 In older versions of Ubuntu, the Nazli font was provided by the
 `ttf-farsiweb` package instead of `fonts-farsiweb`.
