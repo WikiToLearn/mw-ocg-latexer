@@ -16,3 +16,7 @@ for Hebrew at the moment.
 
 Rachana is our Malayalam font.  It is in fonts-smc on newer Debian/Ubuntu
 releases, and in ttf-malayalam-fonts on older releases.
+
+The Lohit fonts are from https://fedorahosted.org/lohit/.  We're using
+the 2014-02-20 release.  They cover 11 Indian languages (21, if you count
+the various languages using Devanagari script separately).
