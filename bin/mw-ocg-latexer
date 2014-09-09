@@ -98,6 +98,9 @@ latexer.convert(options).catch(function(err) {
 	if ( err instanceof Error ) {
 		msg.message = err.message;
 		msg.stack = err.stack;
+		if (err.stdout || err.stderr) {
+			msg.details = { log: err.stdout, err: err.stderr };
+		}
 	} else {
 		msg.message = '' + err;
 	}
