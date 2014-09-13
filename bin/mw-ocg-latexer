@@ -16,8 +16,8 @@ program
 	.usage('[options] <bundle_dir or bundle.zip>')
 	.option('-o, --output <filename>',
 			'Save PDF to the given <filename>', null)
-	.option('-s, --size <letter|a4>',
-			'Set paper size', 'letter')
+	.option('-s, --papersize <letter|a4>',
+			'Set paper size', null)
 	.option('-t, --toc <yes|no|auto>',
 			'Force presence/absence of table of contents [auto]', 'auto')
 	.option('-L, --lang <2-char lang code>',
@@ -76,7 +76,6 @@ var log = function() {
 
 var options = {
 	bundle: bundlefile,
-	size: program.size,
 	latex: !!program.latex,
 	debug: !!program.debug,
 	output: program.output,
@@ -88,6 +87,14 @@ var options = {
 
 if (program.toc !== 'auto') {
 	options.toc = !/^(no|false|off)$/i.test(program.toc);
+}
+
+if (program.papersize !== null) {
+	if (!/^(letter|a4)$/.test(program.papersize)) {
+     console.error("Bad paper size: "+program.papersize);
+     process.exit(1);
+   }
+   options.papersize = program.papersize;
 }
 
 latexer.convert(options).catch(function(err) {
