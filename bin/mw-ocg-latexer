@@ -91,10 +91,10 @@ if (program.toc !== 'auto') {
 
 if (program.papersize !== null) {
 	if (!/^(letter|a4)$/.test(program.papersize)) {
-     console.error("Bad paper size: "+program.papersize);
-     process.exit(1);
-   }
-   options.papersize = program.papersize;
+		console.error("Bad paper size: "+program.papersize);
+		process.exit(1);
+	}
+	options.papersize = program.papersize;
 }
 
 latexer.convert(options).catch(function(err) {
