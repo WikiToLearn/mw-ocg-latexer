@@ -1,0 +1,17 @@
+\ProvidesFile{gloss-oriya.ldf}[polyglossia: module for oriya]
+\ifluatex
+  \xpg@warning{Oriya is not supported with LuaTeX.\MessageBreak
+I will proceed with the compilation, but\MessageBreak
+the output is not guaranteed to be correct\MessageBreak
+and may look very wrong.}
+\fi
+
+\PolyglossiaSetup{oriya}{
+  script=Oriya,
+  scripttag=orya,
+  langtag=ORI,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}
+
+\endinput
