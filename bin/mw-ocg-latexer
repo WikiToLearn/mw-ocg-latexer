@@ -24,6 +24,8 @@ program
 			'Force collection to use the given default language', null)
 	.option('-1, --one-column',
 			'Render page in single column layout')
+	.option('--enable-djvu',
+			'Enable DjVu conversion (disabled by default)')
 	.option('-v, --verbose',
 			'Print verbose progress information')
 	.option('-l, --latex',
@@ -82,6 +84,7 @@ var options = {
 	tmpdir: program.temporaryDirectory,
 	lang: program.lang,
 	onecolumn: program.oneColumn,
+	enableDjVu: program.enableDjvu,
 	log: log
 };
 
