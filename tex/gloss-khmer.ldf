@@ -1,0 +1,9 @@
+\ProvidesFile{gloss-khmer.ldf}[polyglossia: module for khmer]
+\PolyglossiaSetup{khmer}{
+  script=Khmer,
+  scripttag=khmr,
+  langtag=KHM,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}
+\endinput
