@@ -1,0 +1,10 @@
+\ProvidesFile{gloss-aramaic.ldf}[polyglossia: module for aramaic]
+\PolyglossiaSetup{aramaic}{
+  script=Hebrew,
+  scripttag=hebr,
+  direction=RL,
+  langtag=PAA, % Palestinian Aramaic
+  hyphennames={nohyphenation},
+  fontsetup=true
+}
+\endinput
