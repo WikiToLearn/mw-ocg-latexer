@@ -34,7 +34,7 @@ var checkExecutable = function(execfile) {
 describe("Basic crash test", function() {
 	var hasXeLaTeX = checkExecutable('xelatex');
 	var hasJpegtran = checkExecutable('jpegtran');
-	['tao.zip', 'hurricanes.zip', 'malayalam.zip', 'multiwiki.zip', 'papier.zip', 'titlecrash.zip', 'us.zip', 'jabug.zip', 'bug68854.zip', '1988.zip', 'set.zip', 'bug71185.zip', 'url-in-toc.zip', 'allah.zip'].forEach(function(bundle) {
+	['tao.zip', 'hurricanes.zip', 'malayalam.zip', 'multiwiki.zip', 'papier.zip', 'titlecrash.zip', 'us.zip', 'jabug.zip', 'bug68854.zip', '1988.zip', 'set.zip', 'bug71185.zip', 'url-in-toc.zip', 'allah.zip', 'tibetan.zip'].forEach(function(bundle) {
 		describe(bundle, function() {
 			var dest = hasXeLaTeX ? 'pdf' : 'tex';
 			it('should compile to '+dest, function() {
