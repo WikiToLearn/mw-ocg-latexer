@@ -25,7 +25,9 @@ program
 	.option('-1, --one-column',
 			'Render page in single column layout')
 	.option('--enable-djvu',
-			'Enable DjVu conversion (disabled by default)')
+			'Split all pages of DjVu (only first page by default)')
+	.option('--enable-pdf',
+			'Split all pages of PDF (only first page by default)')
 	.option('-v, --verbose',
 			'Print verbose progress information')
 	.option('-l, --latex',
@@ -85,6 +87,7 @@ var options = {
 	lang: program.lang,
 	onecolumn: program.oneColumn,
 	enableDjVu: program.enableDjvu,
+	enablePDF: program.enablePdf,
 	log: log
 };
 
