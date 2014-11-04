@@ -1,4 +1,4 @@
-# mw-ocg-latexer x.x.x (not yet released)
+# mw-ocg-latexer 0.3.0 (2014-11-04)
 * Improved language support: Persian, Indic languages (bug 28206, bug
   68922), CJK (including Simplified and Traditional Chinese scripts,
   and additional language aliases for Korean), Macedonian, Aramaic,
