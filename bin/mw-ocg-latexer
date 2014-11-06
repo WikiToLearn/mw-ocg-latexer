@@ -28,6 +28,8 @@ program
 			'Split all pages of DjVu (only first page by default)')
 	.option('--enable-pdf',
 			'Split all pages of PDF (only first page by default)')
+	.option('--helper-exec-limit <seconds>',
+			'Execution time limit for image helper processes (default 0, no limit)', 0)
 	.option('-v, --verbose',
 			'Print verbose progress information')
 	.option('-l, --latex',
@@ -88,6 +90,7 @@ var options = {
 	onecolumn: program.oneColumn,
 	enableDjVu: program.enableDjvu,
 	enablePDF: program.enablePdf,
+	helperExecLimit: (program.helperExecLimit || 0) * 1000,
 	log: log
 };
 
