@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-require('es6-shim');
-require('prfun');
+require('core-js/shim');
+var Promise = require('prfun');
 
 if (/v0\.[0-7]\./.test(process.version)) {
 	console.error('Node version', process.version, 'is not supported.');

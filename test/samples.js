@@ -1,7 +1,7 @@
 /* global describe, it */
 "use strict";
-require('es6-shim');
-require('prfun');
+require('core-js/shim');
+var Promise = require('prfun');
 
 var assert = require('assert');
 var fs = require('fs');
