@@ -1,4 +1,8 @@
 # mw-ocg-latexer x.x.x (not yet released)
+* Support CPU limiting of helper binaries.
+* Use {{DISPLAYTITLE}} when appropriate.
+* Switch from es6-shim to core-js.
+* Improve text rendering for Nepali languages and Bhojpuri.
 
 # mw-ocg-latexer 0.3.0 (2014-11-04)
 * Improved language support: Persian, Indic languages (bug 28206, bug
