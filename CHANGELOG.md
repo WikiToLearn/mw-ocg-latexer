@@ -1,3 +1,5 @@
+# mw-ocg-latexer x.x.x (not yet released)
+
 # mw-ocg-latexer 0.3.1 (2015-09-14)
 * Support CPU limiting of helper binaries.
 * Use {{DISPLAYTITLE}} when appropriate.
