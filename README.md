@@ -51,12 +51,16 @@ some other source.
 
 ## Running
 
-To generate a PDF named `out.pdf` from the `en` wikipedia article
+To generate a PDF named `out.pdf` from the `en.wikipedia.org` article
 "United States":
 ```
-mw-ocg-bundler -o us.zip --prefix en "United States"
+$SOMEPATH/bin/mw-ocg-bundler -v -o us.zip -h en.wikipedia.org "United States"
 bin/mw-ocg-latexer -o out.pdf us.zip
 ```
+
+In the above command `$SOMEPATH` is the place you installed
+`mw-ocg-bundler`; if you've used the directory structure recommended
+by `mw-ocg-service` this will be `../mw-ocg-bundler`.
 
 For debugging, preserving the XeTeX output is often useful:
 ```
