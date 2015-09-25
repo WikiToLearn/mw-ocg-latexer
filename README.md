@@ -92,7 +92,7 @@ GPLv2
 [mw-ocg-bundler]: https://github.com/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-bundler
 [XeLaTeX]: https://en.wikipedia.org/wiki/XeTeX
 
-[NPM1]: https://nodei.co/npm/mw-ocg-latexer.svg
+[NPM1]: https://nodei.co/npm/mw-ocg-latexer.png
 [NPM2]: https://nodei.co/npm/mw-ocg-latexer/
 
 [1]: https://travis-ci.org/cscott/mw-ocg-latexer.svg
