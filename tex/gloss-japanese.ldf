@@ -1,0 +1,10 @@
+\ProvidesFile{gloss-japanese.ldf}[polyglossia: module for japanese]
+\RequirePackage{xeCJK}
+
+\PolyglossiaSetup{japanese}{%
+  script=Japanese,
+  scripttag=Kana,
+  langtag=Japanese,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}

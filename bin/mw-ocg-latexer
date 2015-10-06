@@ -1,0 +1,129 @@
+#!/usr/bin/env node
+require('core-js/shim');
+var Promise = require('prfun');
+
+if (/v0\.[0-7]\./.test(process.version)) {
+	console.error('Node version', process.version, 'is not supported.');
+	process.exit(1);
+}
+
+var program = require('commander');
+var latexer = require('../');
+var util = require('util');
+
+program
+	.version(latexer.version)
+	.usage('[options] <bundle_dir or bundle.zip>')
+	.option('-o, --output <filename>',
+			'Save PDF to the given <filename>', null)
+	.option('-s, --papersize <letter|a4>',
+			'Set paper size', null)
+	.option('-t, --toc <yes|no|auto>',
+			'Force presence/absence of table of contents [auto]', 'auto')
+	.option('-L, --lang <2-char lang code>',
+			'Force collection to use the given default language', null)
+	.option('-1, --one-column',
+			'Render page in single column layout')
+	.option('--enable-djvu',
+			'Split all pages of DjVu (only first page by default)')
+	.option('--enable-pdf',
+			'Split all pages of PDF (only first page by default)')
+	.option('--helper-exec-limit <seconds>',
+			'Execution time limit for image helper processes (default 0, no limit)', 0)
+	.option('-v, --verbose',
+			'Print verbose progress information')
+	.option('-l, --latex',
+			'Output LaTeX source instead of PDF')
+	.option('-D, --debug',
+			'Turn on debugging features (eg, full stack traces on exceptions)')
+	.option('-T, --temporary-directory <dir>',
+			'Use <dir> for temporaries, not $TMPDIR or /tmp', null);
+
+program.parse(process.argv);
+
+if (program.args.length === 0) {
+	console.error('A bundle filename or directory is required.');
+	return 1;
+}
+if (program.args.length > 1) {
+	console.error('Too many arguments.');
+	return 1;
+}
+
+var bundlefile = program.args[0];
+
+var log = function() {
+	try {
+		// en/disable log messages here
+		if (program.verbose || program.debug) {
+			console.error.apply(console, arguments);
+		}
+		if (process.send) {
+			process.send({
+				type: 'log',
+				level: 'info',
+				message: util.format.apply(null, arguments)
+			});
+		}
+	} catch (err) {
+		// This should never happen!  But don't try to convert arguments
+		// toString() if it does, since that might fail too.
+		console.error("Could not format message!", err);
+		if (process.send) {
+			process.send({
+				type: 'log',
+				level: 'error',
+				message: 'Could not format message! ' + err,
+				stack: err.stack
+			});
+		}
+	}
+};
+
+var options = {
+	bundle: bundlefile,
+	latex: !!program.latex,
+	debug: !!program.debug,
+	output: program.output,
+	tmpdir: program.temporaryDirectory,
+	lang: program.lang,
+	onecolumn: program.oneColumn,
+	enableDjVu: program.enableDjvu,
+	enablePDF: program.enablePdf,
+	helperExecLimit: (program.helperExecLimit || 0) * 1000,
+	log: log
+};
+
+if (program.toc !== 'auto') {
+	options.toc = !/^(no|false|off)$/i.test(program.toc);
+}
+
+if (program.papersize !== null) {
+	if (!/^(letter|a4)$/.test(program.papersize)) {
+		console.error("Bad paper size: "+program.papersize);
+		process.exit(1);
+	}
+	options.papersize = program.papersize;
+}
+
+latexer.convert(options).catch(function(err) {
+	var msg = {
+		type: 'log',
+		level: 'error'
+	};
+	if ( err instanceof Error ) {
+		msg.message = err.message;
+		msg.stack = err.stack;
+		if (err.stdout || err.stderr) {
+			msg.details = { log: err.stdout, err: err.stderr };
+		}
+	} else {
+		msg.message = '' + err;
+	}
+	console.error( (program.debug && msg.stack) || msg.message );
+	// process.send is sync, so we won't exit before this is sent (yay)
+	if (process.send) {
+		process.send(msg);
+	}
+	process.exit(err.exitCode || 1);
+}).done();

@@ -1,0 +1,11 @@
+\ProvidesFile{gloss-hans.ldf}[polyglossia: module for chinese written in pinyin]
+
+\PolyglossiaSetup{hanp}{%
+  % look in /usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty for these, \newfontscript
+  script=Latin,
+  scripttag=latn,
+  % XXX this is the \newfontlanguage command from fontspec-xetex.sty
+  langtag=ZHP,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}

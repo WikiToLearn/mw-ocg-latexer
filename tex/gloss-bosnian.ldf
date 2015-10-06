@@ -1,0 +1,42 @@
+\ProvidesFile{gloss-bosnian.ldf}[polyglossia: module for bosnian]
+\PolyglossiaSetup{bosnian}{
+  script=Latin,
+  scripttag=latn,
+  langtag=HRV, % croatian, this is not quite right but close
+  hyphennames={croatian}, % again, not quite right
+  hyphenmins={2,2},
+  indentfirst=true,
+  fontsetup=true
+}
+
+%% XXX these are croatian, hopefully they are close.
+\def\captionsbosnian{%
+   \def\refname{Literatura}%
+   \def\abstractname{Sažetak}%
+   \def\bibname{Bibliografija}%
+   \def\prefacename{Predgovor}%
+   \def\chaptername{Poglavlje}%
+   \def\appendixname{Dodatak}%
+   \def\contentsname{Sadržaj}%
+   \def\listfigurename{Popis slika}%
+   \def\listtablename{Popis tablica}%
+   \def\indexname{Kazalo}%
+   \def\figurename{Slika}%
+   \def\tablename{Tablica}%
+   \def\partname{Dio}%
+   \def\pagename{Stranica}%
+   \def\seename{Vidjeti}%
+   \def\alsoname{Također vidjeti}%
+   \def\enclname{Prilozi}%
+   \def\ccname{Kopija}%
+   \def\headtoname{Prima}%
+   \def\proofname{Dokaz}%
+   \def\glossaryname{Pojmovnik}%
+   }
+\def\datebosnian{%
+   \def\today{\number\day.~\ifcase\month\or
+    siječnja\or veljače\or ožujka\or travnja\or svibnja\or
+    lipnja\or srpnja\or kolovoza\or rujna\or listopada\or studenoga\or
+    prosinca\fi \space \number\year.}}
+
+\endinput

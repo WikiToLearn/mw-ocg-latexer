@@ -1,0 +1,17 @@
+\ProvidesFile{gloss-assamese.ldf}[polyglossia: module for assamese]
+\ifluatex
+  \xpg@warning{Assamese is not supported with LuaTeX.\MessageBreak
+I will proceed with the compilation, but\MessageBreak
+the output is not guaranteed to be correct\MessageBreak
+and may look very wrong.}
+\fi
+
+\PolyglossiaSetup{assamese}{
+  script=Bengali, % "except for three letters"
+  scripttag=beng,
+  langtag=ASM,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}
+
+\endinput

@@ -1,0 +1,12 @@
+\ProvidesFile{gloss-hans.ldf}[polyglossia: module for simplified chinese]
+\RequirePackage{xeCJK}
+
+\PolyglossiaSetup{hans}{%
+  % look in /usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty for these, \newfontscript
+  script=CJK,
+  scripttag=hani,
+  % XXX this is the \newfontlanguage command from fontspec-xetex.sty
+  langtag=ZHS,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}

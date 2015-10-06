@@ -1,0 +1,10 @@
+\ProvidesFile{gloss-korean.ldf}[polyglossia: module for korean]
+\RequirePackage{xeCJK}
+
+\PolyglossiaSetup{korean}{%
+  script=Korean,
+  scripttag=Hangul,
+  langtag=Korean,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}

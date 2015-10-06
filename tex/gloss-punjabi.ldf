@@ -1,0 +1,17 @@
+\ProvidesFile{gloss-punjabi.ldf}[polyglossia: module for punjabi]
+\ifluatex
+  \xpg@warning{Punjabi is not supported with LuaTeX.\MessageBreak
+I will proceed with the compilation, but\MessageBreak
+the output is not guaranteed to be correct\MessageBreak
+and may look very wrong.}
+\fi
+
+\PolyglossiaSetup{punjabi}{
+  script=Gurmukhi,
+  scripttag=guru,
+  langtag=PAN,
+  hyphennames={nohyphenation},
+  fontsetup=true
+}
+
+\endinput
