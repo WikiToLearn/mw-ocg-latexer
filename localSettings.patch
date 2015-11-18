@@ -1,0 +1,32 @@
+diff --git a/LocalSettings.php b/LocalSettings.php
+index 66bc3fa..f83f770 100644
+--- a/LocalSettings.php
++++ b/LocalSettings.php
+@@ -375,10 +375,14 @@ $wgCollectionFormats = array(
+ );
+ 
+ $wgCollectionRendererSettings['columns']['default'] = 1;
++$wgCollectionRendererSettings['logo']['default'] = 'pool/images/logo.gif';
++
+ 
+ $wgLicenseURL = "//creativecommons.org/licenses/by-sa/3.0/";
+ $wgCollectionPortletFormats = array('rdf2latex', 'rdf2text');
+ 
++//End Collection extension
++
+ require_once "$IP/extensions/Gadgets/Gadgets.php";
+ 
+ require_once "$IP/extensions/DockerAccess/DockerAccess.php";
+diff --git a/Neverland b/Neverland
+index 26a57b7..57e562e 160000
+--- a/Neverland
++++ b/Neverland
+@@ -1 +1 @@
+-Subproject commit 26a57b729678dc8825ddb98721c6aeab21f3bc6b
++Subproject commit 57e562e184f7cd46ae53f5fb57612f82d0acda04
+diff --git a/extensions/Collection b/extensions/Collection
+--- a/extensions/Collection
++++ b/extensions/Collection
+@@ -1 +1 @@
+-Subproject commit d898236d7191d9d9ef16e2461e2a62b99ad75e0d
++Subproject commit d898236d7191d9d9ef16e2461e2a62b99ad75e0d-dirty
