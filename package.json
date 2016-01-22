@@ -39,7 +39,7 @@
     "tmp": "~0.0.27"
   },
   "devDependencies": {
-    "jscs": "~2.1.1",
+    "jscs": "~2.5.0",
     "jshint": "~2.8.0",
     "mocha": "~2.3.3",
     "npm-travis": "~1.0.0"
