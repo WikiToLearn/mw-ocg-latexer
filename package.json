@@ -36,7 +36,8 @@
     "readable-stream": "~1.0.33",
     "sqlite3": "~3.1.0",
     "texvcjs": "~0.3.0",
-    "tmp": "~0.0.27"
+    "tmp": "~0.0.27",
+    "colors": "~1.1.2"
   },
   "devDependencies": {
     "jscs": "~2.5.0",
