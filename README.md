@@ -42,6 +42,9 @@ In older versions of Ubuntu, the Nazli font was provided by the
 
 In Ubuntu 12.04, the `lmodern` package must also be installed manually.
 
+Hyperlinks in generated PDFs will not resolve correctly unless the
+target wiki has [$wgUsePathInfo] enabled.
+
 ## Generating bundles
 
 You may wish to install the [mw-ocg-bundler] npm package to create bundles
@@ -91,6 +94,7 @@ GPLv2
 
 [mw-ocg-bundler]: https://github.com/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-bundler
 [XeLaTeX]: https://en.wikipedia.org/wiki/XeTeX
+[$wgUsePathInfo]: https://www.mediawiki.org/wiki/Manual:$wgUsePathInfo
 
 [NPM1]: https://nodei.co/npm/mw-ocg-latexer.png
 [NPM2]: https://nodei.co/npm/mw-ocg-latexer/
