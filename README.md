@@ -67,7 +67,7 @@ by `mw-ocg-service` this will be `../mw-ocg-bundler`.
 
 For debugging, preserving the XeTeX output is often useful:
 ```
-bin/mw-ocg-latexer -o out.tex us.zip
+bin/mw-ocg-latexer -l -D -o out.tex us.zip
 TEXINPUTS=tex/: xelatex out.tex
 ```
 
