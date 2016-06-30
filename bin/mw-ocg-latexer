@@ -35,7 +35,7 @@ program
 	.option('-l, --latex',
 			'Output LaTeX source instead of PDF')
 	.option('-D, --debug',
-			'Turn on debugging features (eg, full stack traces on exceptions)')
+			'Turn on debugging features (eg, preserve temp dir, full stack traces on exceptions)')
 	.option('-T, --temporary-directory <dir>',
 			'Use <dir> for temporaries, not $TMPDIR or /tmp', null);
 
